@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class UserInterface {
     private Scanner scanner;
-    private ArrayList<Dinosaur> dinosaurs;
+    private ArrayList<Dinosaur> dinosaur;
 
     public UserInterface() {
         this.scanner = new Scanner(System.in);
@@ -35,13 +35,13 @@ public class UserInterface {
                 addDinosaur();
                 break;
             case 2:
-                // checkParkHours();
+                checkParkHours();
                 break;
             case 3:
-                // greetGuest();
+                greetGuest();
                 break;
             case 4:
-                // checkVisitorsCount();
+                checkVisitorsCount();
                 break;
             case 5:
                 // manageStaff();
@@ -65,6 +65,19 @@ public class UserInterface {
         int age = scanner.nextInt();
         System.out.println("Enter weight: ");
         double weight = scanner.nextDouble();
-        this.dinosaurs.add(new Dinosaur(name, age, weight));
+        this.dinosaur.add(new Dinosaur(name, age, weight));
+    }
+
+    public void checkParkHours() {
+        System.out.println("Welcome to Mesozoic Eden. We are open from 08:00 to 20:00");
+    }
+
+    private void greetGuest() {
+        checkParkHours();
+        System.out.println("Mesozoic Eden is safe and secure.");
+    }
+
+    private void checkVisitorsCount() {
+        System.out.println("Current visitor count is: 102");
     }
 }
